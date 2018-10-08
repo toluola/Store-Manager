@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	color: #666;
+}
+
+.wrapper {
+	padding: 5px;
+	max-width: 960px;
+	width: 95%;
+	margin: auto;
+}
+header {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #efefef;
+	text-align: left;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px 0;
+}
+
+.column {
+	flex: 1;
+	margin: 2px;
+	padding: 10px;
+	&:first-child {
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.input,
+.submit {
+	display: inline-block;
+	padding: 10px 15px;
+	font-size: 20px;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+.input {
+	border: 1px solid lightgray;
+}
+
+.submit {
+	background-color: #efefef;
+	border: 1px solid transparent;
+	border-radius: 10%;
+}
+
+.submit::-moz-focus-inner {
+	border: 0;
+}
+
+.user-form {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	background: none;
+	outline: none;
+	resize: none;
+	border: 0;
+	font-family: "Montserrat", sans-serif;
+	transition: all 0.3s;
+	border-bottom: 2px solid #bebed2;
+}
+.user-form:focus {
+	border-bottom: 2px solid #78788c;
+}
+p:before {
+	content: attr(type);
+	display: block;
+	margin: 28px 0 0;
+	font-size: 14px;
+	color: #5a5a5a;
+}
+.button {
+	float: right;
+	padding: 8px 12px;
+	margin: 8px 0 0;
+	font-family: "Montserrat", sans-serif;
+	border: 2px solid #78788c;
+	background: 0;
+	color: #5a5a6e;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.button:hover {
+	background: #78788c;
+	color: #fff;
+}
+
+.button-create {
+	padding: 8px 12px;
+	margin: 8px 0 0;
+	font-family: "Montserrat", sans-serif;
+	border: 2px solid #78788c;
+	background: 0;
+	color: #5a5a6e;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.button-create:hover {
+	background: #78788c;
+	color: #fff;
+}
+
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #efefef;
+	text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+	.columns .column {
+		margin-bottom: 5px;
+		flex-basis: 40%;
+		&:nth-last-child(2) {
+			margin-right: 0;
+		}
+		&:last-child {
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 680px) {
+	.columns .column {
+		flex-basis: 100%;
+		margin: 0 0 5px 0;
+	}
+}
