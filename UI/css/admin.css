@@ -35,12 +35,6 @@ header {
 	flex: 1;
 	margin: 2px;
 	padding: 10px;
-	&:first-child {
-		margin-left: 0;
-	}
-	&:last-child {
-		margin-right: 0;
-	}
 }
 .input,
 .submit {
