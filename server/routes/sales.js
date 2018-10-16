@@ -3,10 +3,10 @@ import { getSales, postSales, postEachSales } from "../controllers/sales";
 
 const router = express.Router();
 
-router.get("/", getSales);
+router.get("/admin", getSales);
 
-router.post("/", postSales);
+router.post("/attendant", postSales);
 
-router.get("/:Id", postEachSales);
+router.get("/:user/:Id", postEachSales);
 
 export default router;

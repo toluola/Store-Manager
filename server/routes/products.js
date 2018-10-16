@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/", getProduct);
 
-router.post("/", saveProduct);
+router.post("/admin", saveProduct);
 
 router.get("/:Id", getEachProduct);
 
