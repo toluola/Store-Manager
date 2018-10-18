@@ -2,8 +2,13 @@ import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
 import productRoutes from "./routes/products";
 import salesRoutes from "./routes/sales";
+
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -31,7 +36,7 @@ app.use((error, req, res, next) => {
 });
 
 if (!module.parent) {
-	app.listen(3000, () => console.log("Running on localhost:3000"));
+	app.listen(PORT, () => console.log(`Running on localhost:${PORT}`));
 }
 
 export default app;
