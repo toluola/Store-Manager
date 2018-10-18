@@ -30,8 +30,8 @@ app.use((error, req, res, next) => {
 	next();
 });
 
-app.get("/*", (req, res) => {
-	res.sendFile(path.join(__dirname, "index.html"));
-});
+if (!module.parent) {
+	app.listen(3000, () => console.log("Running on localhost:3000"));
+}
 
-app.listen(3000, () => console.log("Running on localhost:3000"));
+export default app;
