@@ -42,7 +42,7 @@ export const postSales = (req, res) => {
 	}
 };
 
-export const postEachSales = (req, res) => {
+export const getEachSales = (req, res) => {
 	const id = req.params.Id;
 	const users = req.params.user;
 	if (users === "admin" || sales.filter(user => user.created_by === users)) {
