@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100, 300, 400);
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+}
+header {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: left;
+}
+h1 {
+    color: #666;
+}
+
+.button {
+    padding: 8px 12px;
+    margin: 8px 0 0;
+    font-family: "Montserrat", sans-serif;
+    border: 2px solid #78788c;
+    background: 0;
+    color: #5a5a6e;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: 400px;
+}
+.button:hover {
+    background: #78788c;
+    color: #fff;
+}
+.view-button {
+    position: center;
+}
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
