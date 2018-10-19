@@ -8,7 +8,7 @@ import getEachProductSpec from "./getEachProduct.spec";
 import postSalesSpec from "./postSales.spec";
 import getSalesSpec from "./getSales.spec";
 import getEachSalesSpec from "./getEachSales.spec";
-import errorGetEachSaleSpec from "./errorGetEachSale.spec";
+import errorSalesSpec from "./errorSales.spec";
 
 chai.use(chaiHttp);
 const rootUrl = "/api/v1/invalid";
@@ -30,4 +30,4 @@ getEachProductSpec();
 postSalesSpec();
 getSalesSpec();
 getEachSalesSpec();
-errorGetEachSaleSpec();
+errorSalesSpec();

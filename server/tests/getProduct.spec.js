@@ -4,6 +4,7 @@ import chaiHttp from "chai-http";
 import app from "../index";
 
 const rootUrl = "/api/v1/products";
+const rootUrl2 = "/api/v1/products";
 
 chai.use(chaiHttp);
 

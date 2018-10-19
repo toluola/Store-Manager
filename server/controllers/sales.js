@@ -45,7 +45,10 @@ export const postSales = (req, res) => {
 export const getEachSales = (req, res) => {
 	const id = req.params.Id;
 	const users = req.params.user;
-	if (users === "admin" || sales.filter(user => user.created_by === users)) {
+	if (
+		users === "admin" ||
+		sales.filter(user => user.id === id)[0].created_by === users
+	) {
 		const data = sales.filter(user => user.id === id)[0];
 		if (data) {
 			res.status(200).json({
