@@ -7,6 +7,14 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 300;
 }
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 header {
     right: 0;
     bottom: 0;
@@ -28,7 +36,7 @@ h1 {
     color: #5a5a6e;
     cursor: pointer;
     transition: all 0.3s;
-    margin-left: 400px;
+    /* margin-left: 600px;*/
 }
 .button:hover {
     background: #78788c;
@@ -37,8 +45,35 @@ h1 {
 .view-button {
     position: center;
 }
+.info-card {
+    padding: 10px 20px;
+}
+#courses-list .row {
+    margin-bottom: 20px;
+}
+.add-to-cart {
+    margin: 10px 0;
+}
+.card {
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    background: white;
+}
+.info-card p,
+.card h4 {
+    margin-bottom: 5px;
+}
+.info-card .price {
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.info-card .price span {
+    font-weight: 700;
+    font-size: 22px;
+}
 .footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
@@ -46,3 +81,5 @@ h1 {
     background-color: #efefef;
     text-align: center;
 }
+
+
