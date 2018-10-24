@@ -1,5 +1,6 @@
-html {
-  height: 100%;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 ::-moz-selection {
   background: #fe57a1;
@@ -28,9 +29,9 @@ body {
   background: #eceeee;
   border: 1px solid #42464b;
   border-radius: 6px;
-  height: 257px;
-  margin: 20px auto 0;
-  width: 298px;
+  height: 400px;
+  margin: 70px auto 0;
+  width: 500px;
 }
 .login h1 {
   background-image: linear-gradient(top, #f1f3f3, #d4dae0);
@@ -48,15 +49,15 @@ body {
 }
 input[type="password"],
 input[type="text"] {
-  background: url("http://i.minus.com/ibhqW9Buanohx2.png") center left no-repeat,
+  background: url("http://i.minus.com/ibhqW9Buanohx2.png") center no-repeat,
     linear-gradient(top, #d6d7d7, #dee0e0);
   border: 1px solid #a1a3a3;
   border-radius: 4px;
   box-shadow: 0 1px #fff;
   box-sizing: border-box;
   color: #696969;
-  height: 39px;
-  margin: 31px 0 0 29px;
+  height: 50px;
+  margin: 40px 0 0 29px;
   padding-left: 37px;
   transition: box-shadow 0.3s;
   width: 240px;
@@ -71,6 +72,9 @@ input[type="text"]:focus {
   height: 16px;
   margin: 26px 0 0 28px;
   width: 87px;
+}
+#username {
+  margin-top: 80px;
 }
 input[type="checkbox"] {
   cursor: pointer;
@@ -136,4 +140,12 @@ input[type="submit"]:active {
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d,
     0px 5px 3px #999;
 }
-
+.form {
+  margin-left: 100px;
+  height: 100px;
+}
+/*@media (max-width: 560px) {
+  body {
+    height: 50%;
+  }
+}*/

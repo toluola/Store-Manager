@@ -78,6 +78,11 @@ td {
     text-align: left;
     border-bottom: 1px solid #e1e1e1;
 }
+#bg {
+    background-color: #0d0c11;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
 
 .button {
     display: inline-block;
@@ -149,6 +154,39 @@ input[type="text"] {
     float: right;
 }
 
+#courses-list .row {
+    margin-bottom: 20px;
+}
+.add-to-cart {
+    margin: 10px 0;
+}
+.card {
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    background: white;
+}
+@media (min-width: 550px) {
+    .card {
+        text-align: left;
+    }
+}
+.info-card {
+    padding: 10px 20px;
+}
+.info-card p,
+.card h4 {
+    margin-bottom: 5px;
+}
+.info-card .price {
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.info-card .price span {
+    font-weight: 700;
+    font-size: 22px;
+}
+
 @media (max-width: 560px) {
     header {
         padding: 5px 0 0 0;
@@ -158,4 +196,29 @@ input[type="text"] {
     .two {
         width: 20%;
     }
+}
+
+.main-bar {
+    padding: 20px 0;
+    background: #741d51; /* Old browsers */
+    background: -moz-linear-gradient(
+        left,
+        #741d51 0%,
+        #e44e52 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        left,
+        #741d51 0%,
+        #e44e52 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to right,
+        #741d51 0%,
+        #e44e52 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#741d51', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
+}
+
+#cart-content {
+    width: 10px;
 }
