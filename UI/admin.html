@@ -4,31 +4,58 @@
 	<meta charset="UTF-8">
 	<title>Admin-Page</title>
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 </head>
 <body>
 	
-
+	<div class="container">
 	<header>
 		<h1>Welcome Admin</h1>
 	</header>
 <div class="wrapper">		
-<section class="columns">
+<section class="col">
 	
-	<div class="column">
-		<h2>Enter the product you want to add below</h2>
+	<div class="colum">
+		 <table id="cart-content" class="u-full-width">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>                         
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>bag</th>
+                                                <th>$40</th>
+                                                <th>4</th>                                            
+                                                <th><button class="button">edit</button></th>
+                                                <th><button class="button">delete</button></th>
+                                            </tr>
+                                            <tr>
+                                                <th>shoe</th>
+                                                <th>$50</th>
+                                                <th>5</th>
+                                                <th><button class="button">edit</button></th>
+                                                <th><button class="button">delete</button></th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 		<form>
-    		<input class="input" type="text" placeholder="Enter a new product">
-    		<!-- <input class="submit" type="submit" value="Add"> -->
-    		<button class="button-create">Add</button>
+    		<input class="input" type="text" placeholder="Name...">
+    		<input class="input" type="text" placeholder="Price...">
+    		<input class="input" type="text" placeholder="Quantity...">
+    		<button class="button">Add</button>
 		</form>
 	</div>
 	
-	<div class="column">
-		<button id="button">View all products</button>
+	<div class="colum">
+		<button class="button">View all sales</button>
 		
 	</div>
   
-  <div class="column">
+  <div class="colum">
 		<h2>Create a new store attendant account</h2>
 	<form class="form">
   		<p type="Name:"><input class="user-form"></input></p>
@@ -44,6 +71,6 @@
 	</footer>
 
 </div>
-	
+	</div>
 </body>
 </html>

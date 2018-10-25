@@ -31,7 +31,7 @@ body {
   border-radius: 6px;
   height: 400px;
   margin: 70px auto 0;
-  width: 500px;
+  width: 100px;
 }
 .login h1 {
   background-image: linear-gradient(top, #f1f3f3, #d4dae0);
@@ -141,11 +141,5 @@ input[type="submit"]:active {
     0px 5px 3px #999;
 }
 .form {
-  margin-left: 100px;
   height: 100px;
 }
-/*@media (max-width: 560px) {
-  body {
-    height: 50%;
-  }
-}*/
