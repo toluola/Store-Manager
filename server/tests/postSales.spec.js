@@ -3,7 +3,7 @@ import chaiHttp from "chai-http";
 
 import app from "../index";
 
-const rootUrl = "/api/v1/sales/attendant";
+const rootUrl = "/api/v1/sales";
 
 chai.use(chaiHttp);
 
@@ -11,8 +11,8 @@ export default function() {
 	const sales = {
 		id: "1",
 		name: "shoe",
-		price: "47",
-		quantity: "5",
+		price: 47,
+		quantity: 5,
 		created_by: "tolu"
 	};
 
@@ -22,7 +22,7 @@ export default function() {
 				.request(app)
 				.post(rootUrl)
 				.send(sales);
-			expect(response).to.have.status(200);
+			expect(response).to.have.status(201);
 			expect(response.body.createdProduct.product_info).to.have.property(
 				"id"
 			);
@@ -40,7 +40,7 @@ export default function() {
 			);
 			expect(response.body)
 				.to.have.property("message")
-				.eql("Sale order successfully created");
+				.eql("sales order added successfully");
 		});
 	});
 }

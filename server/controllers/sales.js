@@ -25,44 +25,51 @@ export const postSales = (req, res) => {
 			created_by: req.body.created_by
 		}
 	};
-
-	const saleData = _.each(sale, item => {
-		sales.push(item);
-	});
-
-	if (saleData) {
-		res.status(200).json({
-			message: "Sale order successfully created",
-			createdProduct: sale
+	const idSave = req.body.id;
+	const nameSave = req.body.name;
+	const priceSave = req.body.price;
+	const quantitySave = req.body.quantity;
+	const createdbySave = req.body.quantity;
+	const newId = sales.filter(user => user.id === idSave)[0];
+	const newName = sales.filter(user => user.name === nameSave)[0];
+	if (newId || newName) {
+		res.status(400).json({
+			message: "Bad request"
+		});
+	} else if (
+		idSave === "" ||
+		nameSave === "" ||
+		quantitySave === "" ||
+		createdbySave === "" ||
+		priceSave === "" ||
+		typeof priceSave !== "number" ||
+		typeof quantitySave !== "number"
+	) {
+		res.status(404).json({
+			message: "Not found"
 		});
 	} else {
-		res.status(400).json({
-			message: "Something went wrong"
+		const added = _.each(sale, item => {
+			sales.push(item);
+		});
+		res.status(201).json({
+			message: "sales order added successfully",
+			createdProduct: sale
 		});
 	}
 };
 
 export const getEachSales = (req, res) => {
 	const id = req.params.Id;
-	const users = req.params.user;
-	if (
-		users === "admin" ||
-		sales.filter(user => user.id === id)[0].created_by === users
-	) {
-		const data = sales.filter(user => user.id === id)[0];
-		if (data) {
-			res.status(200).json({
-				message: "Sale order successfully fetched",
-				result: data
-			});
-		} else {
-			res.status(404).json({
-				message: "Sales record not found"
-			});
-		}
+	const data = sales.filter(user => user.id === id)[0];
+	if (data) {
+		res.status(200).json({
+			message: "Sale order successfully fetched",
+			result: data
+		});
 	} else {
-		res.status(401).json({
-			message: "Not authorized"
+		res.status(404).json({
+			message: "Sales record not found"
 		});
 	}
 };

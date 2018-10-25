@@ -3,7 +3,7 @@ import chaiHttp from "chai-http";
 
 import app from "../index";
 
-const rootUrl = "/api/v1/sales/admin/1";
+const rootUrl = "/api/v1/sales/1";
 
 chai.use(chaiHttp);
 

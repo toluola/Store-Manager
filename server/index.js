@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
@@ -26,8 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-	res.status(error.status || 500);
-	res.json({
+	res.status(error.status || 500).json({
 		error: {
 			message: error.message
 		}

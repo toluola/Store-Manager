@@ -3,7 +3,7 @@ import chaiHttp from "chai-http";
 
 import app from "../index";
 
-const rootUrl = "/api/v1/products/admin";
+const rootUrl = "/api/v1/products";
 
 chai.use(chaiHttp);
 
@@ -11,8 +11,8 @@ export default function() {
 	const products = {
 		id: "1",
 		name: "shoe",
-		price: "47",
-		quantity: "5",
+		price: 47,
+		quantity: 5,
 		created_by: "tolu"
 	};
 
