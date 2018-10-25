@@ -24,18 +24,36 @@ export const saveProduct = (req, res) => {
 			quantity: req.body.quantity
 		}
 	};
-	const added = _.each(product, item => {
-		products.push(item);
-	});
-	if (added) {
+	const idSave = req.body.id;
+	const nameSave = req.body.name;
+	const priceSave = req.body.price;
+	const quantitySave = req.body.quantity;
+	const newId = products.filter(user => user.id === idSave)[0];
+	const newName = products.filter(user => user.name === nameSave)[0];
+	if (newId || newName) {
+		res.status(400).json({
+			message: "Bad request"
+		});
+	} else if (
+		idSave === "" ||
+		nameSave === "" ||
+		quantitySave === "" ||
+		priceSave === "" ||
+		typeof priceSave !== "number" ||
+		typeof quantitySave !== "number"
+	) {
+		res.status(404).json({
+			message: "Not found"
+		});
+	} else {
+		const added = _.each(product, item => {
+			products.push(item);
+		});
 		res.status(201).json({
 			message: "Product added successfully",
 			createdProduct: product
 		});
-	} else {
-		res.status(400).json({
-			message: "Something went wrong"
-		});
+		console.log(products);
 	}
 };
 
@@ -51,5 +69,6 @@ export const getEachProduct = (req, res) => {
 		res.status(404).json({
 			message: "Product not found"
 		});
+		console.log(id);
 	}
 };
