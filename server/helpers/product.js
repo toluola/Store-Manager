@@ -9,28 +9,23 @@ class ProductHelper {
 			res.status(404).json({
 				message: "The Id field can not be Empty"
 			});
-		}
-		if (nameSave === "") {
+		} else if (nameSave === "") {
 			res.status(404).json({
 				message: "The Name Field can not be Empty"
 			});
-		}
-		if (quantitySave === "") {
+		} else if (quantitySave === "") {
 			res.status(404).json({
 				message: "The Quantity Field can not be Empty"
 			});
-		}
-		if (priceSave === "") {
+		} else if (priceSave === "") {
 			res.status(404).json({
 				message: "The Price Field can not be Empty"
 			});
-		}
-		if (typeof priceSave !== "number") {
+		} else if (typeof priceSave !== "number") {
 			res.status(404).json({
 				message: `The price ${priceSave} you Entered is not a Number`
 			});
-		}
-		if (typeof quantitySave !== "number") {
+		} else if (typeof quantitySave !== "number") {
 			res.status(404).json({
 				message: `The quantity ${quantitySave} you Entered is not a Number`
 			});

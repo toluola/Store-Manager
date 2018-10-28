@@ -22,10 +22,10 @@ export default function() {
 				.request(app)
 				.post(rootUrl)
 				.send(salesOne);
-			expect(response).to.have.status(400);
+			expect(response).to.have.status(404);
 			expect(response.body)
 				.to.have.property("message")
-				.eql("Bad request");
+				.eql("The Name Field can not be Empty");
 		});
 	});
 }
