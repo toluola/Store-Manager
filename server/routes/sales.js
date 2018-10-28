@@ -1,14 +1,13 @@
 import express from "express";
-import { getSales, postSales, getEachSales } from "../controllers/sales";
+import SalesController from "../controllers/sales";
+import SalesHelper from "../helpers/sales";
 
 const router = express.Router();
 
-router.get("/", getSales);
+router.get("/", SalesController.getSales);
 
-router.post("/", postSales);
+router.post("/", SalesHelper.salesError, SalesController.postSales);
 
-router.get("/:Id", getEachSales);
+router.get("/:Id", SalesController.getEachSales);
 
 export default router;
-
-
