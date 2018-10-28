@@ -14,28 +14,23 @@ class SalesHelper {
 			res.status(404).json({
 				message: "The Name Field can not be Empty"
 			});
-		}
-		if (quantitySave === "") {
+		} else if (quantitySave === "") {
 			res.status(404).json({
 				message: "The Quantity Field can not be Empty"
 			});
-		}
-		if (priceSave === "") {
+		} else if (priceSave === "") {
 			res.status(404).json({
 				message: "The Price Field can not be Empty"
 			});
-		}
-		if (createdBySave === "") {
+		} else if (createdBySave === "") {
 			res.status(404).json({
 				message: "Please Specify the Creator of the sales"
 			});
-		}
-		if (typeof priceSave !== "number") {
+		} else if (typeof priceSave !== "number") {
 			res.status(404).json({
 				message: `The price value ${priceSave} you Entered is not a Number`
 			});
-		}
-		if (typeof quantitySave !== "number") {
+		} else if (typeof quantitySave !== "number") {
 			res.status(404).json({
 				message: `The Quantity value ${quantitySave} you Entered is not a Number`
 			});

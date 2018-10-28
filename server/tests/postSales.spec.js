@@ -40,7 +40,7 @@ export default function() {
 			);
 			expect(response.body)
 				.to.have.property("message")
-				.eql("sales order added successfully");
+				.eql("Sales record added successfully");
 		});
 	});
 }
