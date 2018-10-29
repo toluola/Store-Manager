@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100, 300, 400);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	background: white;
+}
+#sideMenu {
+	background: #1c2e36;
+	width: 280px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+
+#sideMenu nav {
+	padding-top: 80px;
+}
+
+#sideMenu nav a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 20px 30px;
+	font-weight: 300px;
+	transition: all 0.1s ease-in-out;
+}
+
+#sideMenu nav a.active {
+	background: #1b2327;
+	border-left: 5px solid green;
+	padding: 15px 30px 10px 20px;
+}
+#sideMenu nav a:hover {
+	padding: 15px 30px 10px 20px;
+}
+#sideMenu nav a i {
+	color: white;
+	font-size: 1.4rem;
+	margin-right: 0.8rem;
+	display: inline-block;
+	width: 30px;
+	position: relative;
+	top: 2px;
+}
+
+header {
+	margin-left: 280px;
+	padding: 20px;
+}
+
+header .user {
+	background: #1c2e36;
+	border-radius: 20px;
+}
+
+.user {
+	display: inline-block;
+	float: right;
+	padding: 10px;
+}
+.user a {
+	display: inline-block;
+	margin-right: 20px;
+	text-decoration: none;
+	vertical-align: top;
+	color: white;
+}
+
+.user a .circle {
+	display: inline-block;
+	font-size: 8px;
+	padding: 4px;
+	text-align: center;
+}
+.user a .imgUser {
+	background: url(img/bg.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 5px;
+}
+.user a.add {
+	font-size: 15px;
+	font-weight: 500;
+	padding-top: 3px;
+}
+.user a .fa-chevron-circle-down {
+	position: relative;
+	top: -8px;
+}
+.content {
+	margin-left: 500px;
+	margin-top: 100px;
+}
+.user-form {
+	width: 300px;
+	padding: 10px;
+	box-sizing: border-box;
+	background: none;
+	outline: none;
+	resize: none;
+	border: 0;
+	font-family: "Montserrat", sans-serif;
+	transition: all 0.3s;
+	border-bottom: 2px solid #bebed2;
+}
+.user-form:focus {
+	border-bottom: 2px solid #78788c;
+}
+p:before {
+	content: attr(type);
+	display: block;
+	margin: 28px 0 0;
+	font-size: 14px;
+	color: #5a5a5a;
+}
+.button {
+	padding: 8px 12px;
+	margin: 8px 0 0;
+	font-family: "Montserrat", sans-serif;
+	border: 2px solid #78788c;
+	background: 0;
+	color: #5a5a6e;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.button:hover {
+	background: #78788c;
+	color: #fff;
+}
+.heading h1 {
+	font-family: "Lato", sans-serif;
+	color: #5a5a5a;
+}
+.content #card h4 {
+	font-family: "Lato", sans-serif;
+	color: #5a5a5a;
+}
