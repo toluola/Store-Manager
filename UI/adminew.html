@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/adminew.css">
+</head>
+<body>
+	<section id="sideMenu">
+		<nav>
+			<a href="#card" class="active"><i class="fas fa-address-book"></i> Create Account</a><a href="#add-new"><i class="fas fa-plus-circle"></i> Add New Product</a><a href="#view-sales"><i class="far fa-eye"></i></i> View sales</a><a href="view-product"><i class="far fa-eye"></i> View Products</a>
+		</nav>
+			
+
+	</section>
+	<header>
+
+		<div class="user">
+			<a href="#" class="add">+ Add</a>
+			<a href="#"><i class="fas fa-sign-out-alt"></i><span class="circle">Sign-Out</span></a>
+			<a href="#">
+				<div  class="imgUser"></div>
+				<i class="fas fa-chevron-circle-down"></i>
+			</a>
+		</div>
+	</header>
+         <div class="heading">
+			<h1>Welcome Admin</h1>
+		</div>
+	<section class="content">
+		<div id='card'>
+		<h4>Create a new store attendant account</h4>
+	<form class="form">
+  		<p type="Name:"><input class="user-form"></input></p>
+  		<p type="Email:"><input class="user-form"></input></p>
+  		<button class="button">Create</button>
+</form>
+	</div>
+	<div id="add-new">
+		<form>
+    		<input class="input" type="text" placeholder="Name...">
+    		<input class="input" type="text" placeholder="Price...">
+    		<input class="input" type="text" placeholder="Quantity...">
+    		<button class="button">Add</button>
+		</form>
+	</div>
+	<div id="view-sales">
+		 <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <p>Name: bag</p>
+                    <p>Price: $45</p>
+                    <p>Quantity: 10</p>
+                    <p>Created_by: Tolu</p>
+                    </div>
+                </div> <!--.card-->
+            
+            <div class="four columns">
+                    <div class="card">
+                        <p>Name: bag</p>
+                    <p>Price: $45</p>
+                    <p>Quantity: 10</p>
+                    <p>Created_by: Tolu</p>
+                        </div>
+                    </div>
+           
+            <div class="four columns">
+                    <div class="card">
+                       <p>Name: bag</p>
+                    <p>Price: $45</p>
+                    <p>Quantity: 10</p>
+                    <p>Created_by: Tolu</p>
+                        </div>
+            </div>
+	</div>
+</div>
+   <div id="view-product">
+   	<div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/course1.jpg" class="course-image u-full-width">
+                    <div class="info-card">
+                        <h4>HTML5, CSS3, JavaScript for beginners</h4>
+                        <img src="img/stars.png">
+                        <p>  <span >$15</span></p>
+                        <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="1">Add to Cart</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/course2.jpg" class="course-image u-full-width">
+                        <div class="info-card">
+                            <h4>Cooking Course</h4>
+                            <img src="img/stars.png">
+                            <p>  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="2">Add to Cart</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="img/course3.jpg" class="course-image u-full-width">
+                        <div class="info-card">
+                            <h4>Guitar for beginners</h4>
+                            <img src="img/stars.png">
+                            <p>  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="3">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+   </div>
+</div>
+	</section>
+	 <script src="js/admin.js"></script>
+</body>
+</html>
