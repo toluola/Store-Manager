@@ -30,4 +30,22 @@ export default class Product {
     if (fetchProduct.rowCount === 0) throw new Error("Product not found");
     return fetchProduct.rows[0];
   }
+
+  static async findByIdAndUpdate(id, update) {
+    const updateProduct = await client.query(
+      `UPDATE Products SET name='${update.name}', price='${
+        update.price
+      }', quantity='${update.quantity}' WHERE product_id=${id} RETURNING *`
+    );
+    if (updateProduct.rowCount === 0) throw new Error("Product not found");
+    return updateProduct.rows[0];
+  }
+
+  static async findByIdAndDelete(id) {
+    const deleteProduct = await client.query(
+      `DELETE FROM Products WHERE product_id=${id} RETURNING *`
+    );
+    if (deleteProduct.rowCount === 0) throw new Error("entry not found");
+    return deleteProduct.rows[0];
+  }
 }

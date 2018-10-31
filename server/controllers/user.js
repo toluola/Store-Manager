@@ -5,7 +5,6 @@ const signup = async (request, response) => {
 	try {
 		const newUser = new User({ ...request.body });
 		const user = await newUser.save();
-		console.log(user);
 		sendResponse({ response, data: user, status: 201 });
 	} catch (error) {
 		sendResponse({ response, error: [error.message] });
