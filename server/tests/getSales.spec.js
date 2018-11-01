@@ -12,15 +12,18 @@ export default function() {
 		it("should return all sales", async () => {
 			const response = await chai.request(app).get(rootUrl);
 			expect(response).to.have.status(200);
-			expect(response.body.result).to.be.an("array");
-			expect(response.body.result[0]).to.have.property("id");
-			expect(response.body.result[0]).to.have.property("name");
-			expect(response.body.result[0]).to.have.property("price");
-			expect(response.body.result[0]).to.have.property("quantity");
-			expect(response.body.result[0]).to.have.property("created_by");
+			expect(response.body.data).to.be.an("array");
+			expect(response.body.data[0]).to.have.property("sales_id");
+			expect(response.body.data[0]).to.have.property("name");
+			expect(response.body.data[0]).to.have.property("price");
+			expect(response.body.data[0]).to.have.property("quantity");
+			expect(response.body.data[0]).to.have.property("created_by");
 			expect(response.body)
 				.to.have.property("message")
 				.eql("Sales orders successfully fetched");
+			expect(response.body)
+				.to.have.property("error")
+				.eql(null);
 		});
 	});
 }

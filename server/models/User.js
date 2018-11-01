@@ -2,14 +2,6 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import client from "../helpers/connection";
-import { required, minLength, dataType } from "../helpers/utils";
-
-const signupRules = {
-	fullName: [[required], [minLength, 5], [dataType, "string"]],
-	username: [[required], [minLength, 7], [dataType, "string"]],
-	password: [[required], [minLength, 8], [dataType, "string"]],
-	email: [[required], [dataType, "email"]]
-};
 
 export default class User {
 	constructor({ fullName, email, username, password }) {
@@ -99,5 +91,3 @@ export default class User {
 		return noPassword;
 	}
 }
-
-export { signupRules };
