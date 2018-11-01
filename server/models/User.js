@@ -4,11 +4,12 @@ import jwt from "jsonwebtoken";
 import client from "../helpers/connection";
 
 export default class User {
-	constructor({ fullName, email, username, password }) {
+	constructor({ fullName, email, username, password, status }) {
 		this.fullName = fullName;
 		this.email = email ? email.toLowerCase() : email;
 		this.username = username ? username.toLowerCase() : username;
 		this.password = password;
+		this.status = status;
 	}
 
 	static async remove(username) {
@@ -18,12 +19,16 @@ export default class User {
 		return removeUser;
 	}
 
+	// async role() {
+
+	// }
+
 	async save() {
 		this.password = await bcrypt.hash(this.password, 5);
 		const queryAuthentification =
 			"INSERT INTO authentication(username, password) VALUES($1, $2) RETURNING id";
 		const addUserQuery =
-			'INSERT INTO users("fullName", email, "authId") VALUES($1, $2, $3) RETURNING id';
+			'INSERT INTO users("fullName", email, "authId", status) VALUES($1, $2, $3, $4) RETURNING id';
 		try {
 			const addAuthentication = await client.query(
 				queryAuthentification,
@@ -33,7 +38,8 @@ export default class User {
 			const addUser = await client.query(addUserQuery, [
 				this.fullName,
 				this.email,
-				this.authId
+				this.authId,
+				this.status
 			]);
 		} catch (error) {
 			if (
@@ -56,7 +62,7 @@ export default class User {
 	}
 
 	async login() {
-		const authQuery = `SELECT users.id, authentication.password, authentication.username, users."fullName", users.email FROM authentication 
+		const authQuery = `SELECT users.id, authentication.password, authentication.username, users."fullName", users.email, users.status FROM authentication 
     INNER JOIN users ON users."authId" = authentication.id 
     WHERE authentication.username = '${this.username}'`;
 		const getUser = await client.query(authQuery);
@@ -70,6 +76,7 @@ export default class User {
 			this.fullName = user.fullName;
 			this.email = user.email;
 			this.id = user.id;
+			this.status = user.status;
 			this.token = await this.generateToken();
 			return this.strip();
 		}

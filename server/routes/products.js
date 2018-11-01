@@ -6,17 +6,18 @@ import {
 	updateProduct,
 	deleteProduct
 } from "../controllers/product";
+import { authenticate } from "../helpers/utils";
 
 const router = express.Router();
 
-router.get("/", getProducts);
+router.get("/", authenticate, getProducts);
 
-router.put("/:id", updateProduct);
+router.put("/:id", authenticate, updateProduct);
 
-router.delete("/:id", deleteProduct);
+router.delete("/:id", authenticate, deleteProduct);
 
-router.post("/", postProduct);
+router.post("/", authenticate, postProduct);
 
-router.get("/:id", getProduct);
+router.get("/:id", authenticate, getProduct);
 
 export default router;
