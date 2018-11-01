@@ -13,7 +13,10 @@ const signup = async (request, response) => {
 			message: "user successfully created"
 		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message] });
+		sendResponse({
+			response,
+			message: "Something went wrong, can not sign up user"
+		});
 	}
 };
 
@@ -28,7 +31,11 @@ const login = async (request, response) => {
 			message: "user logged in successfully"
 		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 401 });
+		sendResponse({
+			response,
+			message: "Something went wrong can not login user",
+			status: 401
+		});
 	}
 };
 

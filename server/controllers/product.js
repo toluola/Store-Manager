@@ -13,7 +13,11 @@ const postProduct = async (request, response) => {
 			message: "Product added successfully"
 		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 401 });
+		sendResponse({
+			response,
+			message: "can not post Product",
+			status: 401
+		});
 	}
 };
 const getProducts = async (request, response) => {
@@ -36,7 +40,7 @@ const getProduct = async (request, response) => {
 	} catch (error) {
 		sendResponse({
 			response,
-			error: [error.message],
+			message: "can not fetch product",
 			status: 404
 		});
 	}
@@ -49,7 +53,7 @@ const updateProduct = async (request, response) => {
 		});
 		sendResponse({ response, data: product });
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 404 });
+		sendResponse({ response, status: 404 });
 	}
 };
 
@@ -58,7 +62,7 @@ const deleteProduct = async (request, response) => {
 		const product = await Product.findByIdAndDelete(request.params.id);
 		sendResponse({ response, data: product });
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 404 });
+		sendResponse({ response, status: 404 });
 	}
 };
 

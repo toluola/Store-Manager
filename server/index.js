@@ -20,10 +20,15 @@ app.use(cors());
 
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/sales", salesRoutes);
-app.use("/api/v1", userRoutes);
+app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1", (req, res) => {
+	res.status(200).json({
+		message: "welcome to the store manager"
+	});
+});
 
 app.use((req, res, next) => {
-	const error = new Error("Not Found");
+	const error = new Error("Invalid URL");
 	error.status = 404;
 	next(error);
 });

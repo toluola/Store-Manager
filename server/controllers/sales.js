@@ -13,7 +13,7 @@ const postSales = async (request, response) => {
 			message: "Sales record added successfully"
 		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 401 });
+		sendResponse({ response, message: "Can not post sales", status: 401 });
 	}
 };
 const getSales = async (request, response) => {
@@ -34,7 +34,11 @@ const getSale = async (request, response) => {
 			message: "Sale order successfully fetched"
 		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 404 });
+		sendResponse({
+			response,
+			message: "Can not fetch sale Record",
+			status: 404
+		});
 	}
 };
 

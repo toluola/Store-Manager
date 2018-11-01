@@ -98,7 +98,7 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked + .toggle {
   background-position: 0 -16px;
 }
-input[type="submit"] {
+input[type="button"] {
   width: 240px;
   height: 35px;
   display: block;

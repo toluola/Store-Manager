@@ -15,8 +15,6 @@
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel --ignore ./server/tests -d ./dist ./server -s",
     "clean": "rm -rf dist && mkdir dist",
-    "dbSetup": "babel-node server/migrations/dbSetup",
-    "dropTables": "babel-node server/migrations/dropTables",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -30,10 +28,7 @@
   },
   "homepage": "https://github.com/toluola/Store-Manager#readme",
   "nyc": {
-    "exclude": [
-      "UI/**.js",
-      "**/**.spec.js"
-    ]
+    "exclude": ["UI/**.js", "**/**.spec.js"]
   },
   "dependencies": {
     "babel-cli": "^6.26.0",

@@ -1,17 +1,26 @@
+import { sendResponse } from "./utils";
+
 class ProductHelper {
-	static productError(req, res, next) {
+	static productNameError(request, response, next) {
 		const nameSave = req.body.name;
 		const priceSave = req.body.price;
 		const quantitySave = req.body.quantity;
 
 		if (nameSave === "") {
-			res.status(404).json({
-				message: "The Name Field can not be Empty"
-			});
-		} else if (typeof priceSave !== "number") {
-			res.status(404).json({
-				message: `The price ${priceSave} you Entered is not a Number`
-			});
+		return sendResponse({
+			response,
+			status: 201,
+			message: "Name can not be Empty"
+		});
+		}
+		
+	static productPriceError(request, response) {
+			if(typeof priceSave !== "number")
+			return sendResponse({
+			response,
+			status: 201,
+			message: ""
+		});
 		} else if (typeof quantitySave !== "number") {
 			res.status(404).json({
 				message: `The quantity ${quantitySave} you Entered is not a Number`

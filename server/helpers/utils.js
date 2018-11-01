@@ -14,8 +14,7 @@ const authenticate = async (request, response, next) => {
 	} catch (error) {
 		response.status(401).json({
 			data: {},
-			message: "You are not Authorized",
-			error: [error.message]
+			message: "You are not Authorized"
 		});
 	}
 };
@@ -30,22 +29,14 @@ const checkAuth = async (request, response, next) => {
 	} catch (error) {
 		response.status(401).json({
 			data: {},
-			message: "You are not Authorized",
-			error: [error.message]
+			message: "You are not Authorized"
 		});
 	}
 };
 
-const sendResponse = ({
-	data = {},
-	status = 200,
-	error = null,
-	response,
-	message
-}) => {
+const sendResponse = ({ data = {}, status = 200, response, message }) => {
 	response.status(error && status < 400 ? 400 : status).json({
 		data,
-		error,
 		message
 	});
 };
