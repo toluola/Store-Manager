@@ -12,21 +12,7 @@ class ProductHelper {
 			status: 201,
 			message: "Name can not be Empty"
 		});
-		}
 		
-	static productPriceError(request, response) {
-			if(typeof priceSave !== "number")
-			return sendResponse({
-			response,
-			status: 201,
-			message: ""
-		});
-		} else if (typeof quantitySave !== "number") {
-			res.status(404).json({
-				message: `The quantity ${quantitySave} you Entered is not a Number`
-			});
-		}
-
 		next();
 	}
 }
