@@ -18,10 +18,17 @@ const authenticate = async (request, response, next) => {
 	}
 };
 
-const sendResponse = ({ data = {}, status = 200, error = null, response }) => {
+const sendResponse = ({
+	data = {},
+	status = 200,
+	error = null,
+	response,
+	message
+}) => {
 	response.status(error && status < 400 ? 400 : status).json({
 		data,
-		error
+		error,
+		message
 	});
 };
 

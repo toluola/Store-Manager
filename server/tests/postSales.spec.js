@@ -9,7 +9,6 @@ chai.use(chaiHttp);
 
 export default function() {
 	const sales = {
-		id: "1",
 		name: "shoe",
 		price: 47,
 		quantity: 5,
@@ -23,24 +22,17 @@ export default function() {
 				.post(rootUrl)
 				.send(sales);
 			expect(response).to.have.status(201);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"id"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"name"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"price"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"quantity"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"created_by"
-			);
+			expect(response.body.data).to.have.property("sales_id");
+			expect(response.body.data).to.have.property("name");
+			expect(response.body.data).to.have.property("price");
+			expect(response.body.data).to.have.property("quantity");
+			expect(response.body.data).to.have.property("created_by");
 			expect(response.body)
 				.to.have.property("message")
 				.eql("Sales record added successfully");
+			expect(response.body)
+				.to.have.property("error")
+				.eql(null);
 		});
 	});
 }

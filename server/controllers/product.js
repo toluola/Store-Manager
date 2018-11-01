@@ -6,22 +6,39 @@ const postProduct = async (request, response) => {
 		const { name, price, quantity } = request.body;
 		const newProduct = new Product({ name, price, quantity });
 		const product = await newProduct.save();
-		sendResponse({ response, data: product, status: 201 });
+		sendResponse({
+			response,
+			data: product,
+			status: 201,
+			message: "Product added successfully"
+		});
 	} catch (error) {
 		sendResponse({ response, error: [error.message], status: 401 });
 	}
 };
 const getProducts = async (request, response) => {
 	const products = await Product.find();
-	sendResponse({ response, data: products });
+	sendResponse({
+		response,
+		data: products,
+		message: "Products fetched successfully"
+	});
 };
 const getProduct = async (request, response) => {
 	try {
 		const { id } = request.params;
 		const product = await Product.findById(id);
-		sendResponse({ response, data: product });
+		sendResponse({
+			response,
+			data: product,
+			message: "Product fetched successfully"
+		});
 	} catch (error) {
-		sendResponse({ response, error: [error.message], status: 404 });
+		sendResponse({
+			response,
+			error: [error.message],
+			status: 404
+		});
 	}
 };
 

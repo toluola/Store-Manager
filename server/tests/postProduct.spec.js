@@ -9,35 +9,28 @@ chai.use(chaiHttp);
 
 export default function() {
 	const products = {
-		id: "1",
 		name: "shoe",
 		price: 47,
-		quantity: 5,
-		created_by: "tolu"
+		quantity: 5
 	};
 
 	describe("POST  all products", () => {
-		it("should return all entries", async () => {
+		it("should return all Products", async () => {
 			const response = await chai
 				.request(app)
 				.post(rootUrl)
 				.send(products);
 			expect(response).to.have.status(201);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"id"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"name"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"price"
-			);
-			expect(response.body.createdProduct.product_info).to.have.property(
-				"quantity"
-			);
+			expect(response.body.data).to.have.property("product_id");
+			expect(response.body.data).to.have.property("name");
+			expect(response.body.data).to.have.property("price");
+			expect(response.body.data).to.have.property("quantity");
 			expect(response.body)
 				.to.have.property("message")
 				.eql("Product added successfully");
+			expect(response.body)
+				.to.have.property("error")
+				.eql(null);
 		});
 	});
 }
