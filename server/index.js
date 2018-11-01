@@ -6,6 +6,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import productRoutes from "./routes/products";
 import salesRoutes from "./routes/sales";
+import userRoutes from "./routes/user";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/sales", salesRoutes);
+app.use("/api/v1", userRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error("Not Found");
