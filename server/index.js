@@ -21,11 +21,6 @@ app.use(cors());
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/sales", salesRoutes);
 app.use("/api/v1/auth", userRoutes);
-app.use("/api/v1", (req, res) => {
-	res.status(200).json({
-		message: "welcome to the store manager"
-	});
-});
 
 app.use((req, res, next) => {
 	const error = new Error("Invalid URL");
@@ -42,8 +37,6 @@ app.use((error, req, res, next) => {
 	next();
 });
 
-if (!module.parent) {
-	app.listen(PORT, () => console.log(`Running on localhost:${PORT}`));
-}
+app.listen(PORT, () => console.log(`Running on localhost:${PORT}`));
 
 export default app;

@@ -28,9 +28,6 @@ export default function() {
 			expect(response.body)
 				.to.have.property("message")
 				.eql("Product added successfully");
-			expect(response.body)
-				.to.have.property("error")
-				.eql(null);
 		});
 	});
 }

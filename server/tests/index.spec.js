@@ -11,7 +11,7 @@ import getEachSalesSpec from "./getEachSales.spec";
 import errorSalesSpec from "./errorSales.spec";
 
 chai.use(chaiHttp);
-const rootUrl = "/api/v1/invalid";
+const rootUrl = "/";
 
 describe("Error", () => {
 	it(" Invald route should return error", async () => {
@@ -20,7 +20,7 @@ describe("Error", () => {
 		expect(res.body).to.be.an("object");
 		expect(res.body.error)
 			.to.have.property("message")
-			.to.eql("Not Found");
+			.to.eql("Invalid URL");
 	});
 });
 

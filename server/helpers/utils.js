@@ -34,7 +34,13 @@ const checkAuth = async (request, response, next) => {
 	}
 };
 
-const sendResponse = ({ data = {}, status = 200, response, message }) => {
+const sendResponse = ({
+	data = {},
+	status = 200,
+	response,
+	message,
+	error
+}) => {
 	response.status(error && status < 400 ? 400 : status).json({
 		data,
 		message

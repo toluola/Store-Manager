@@ -21,9 +21,6 @@ export default function() {
 			expect(response.body)
 				.to.have.property("message")
 				.eql("Sales orders successfully fetched");
-			expect(response.body)
-				.to.have.property("error")
-				.eql(null);
 		});
 	});
 }

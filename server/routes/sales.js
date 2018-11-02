@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", authenticate, getSales);
 
-router.post("/", authenticate, postSales);
+router.post("/", postSales);
 
 router.get("/:id", authenticate, getSale);
 
