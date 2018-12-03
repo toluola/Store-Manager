@@ -10,18 +10,21 @@
 </head>
 
 <body>
-	<div class="container">
 	<div class="header-text">My Store Manager</div>
-	<div class="login six columns">
-	<form class="form six columns">
+	<div class="container">
+
+	<div class="login five columns">
+	 <div class="loginError">Error. Something Went Wrong</div> 
+	<form class="loginForm five columns">
+
 		<input type="text"
 			placeholder="Username"
 			id="username">
 		<input type="password"
 			placeholder="Password"
 			id="password">
-		<input type="button"
-			value="Sign In" onclick="location.href='order.html';">
+		<input type="submit"
+			value="Sign In">
 
 	</form>
 
@@ -30,8 +33,6 @@
 	<div class="shadow">
 	</div>
 	</div>
-	<footer>
-        <div class="footer">&copy 2018</div>
-	</footer>
+	<script src="js/login.js"></script>
 </body>
 </html>

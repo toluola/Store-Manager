@@ -2,6 +2,7 @@ import "babel-polyfill";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
+import validator from "express-validator";
 import cors from "cors";
 import dotenv from "dotenv";
 import productRoutes from "./routes/products";
@@ -17,6 +18,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(validator());
 
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/sales", salesRoutes);

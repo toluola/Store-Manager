@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="four columns">
-            	<p id="logo">My Store Manager</p>
+            	<p class="logo">My Store Manager</p>
           
             </div>
             <div class="two columns u-pull-right container">
@@ -21,13 +21,12 @@
                     <li class="submenu">
                             <img src="img/cart.png" id="img-cart">
                             <div id="shopping-cart">
-                                    <table id="cart-content" class="u-full-width">
+                                    <table id="cart-content" class="u-full-width table">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Price</th>
                                                 <th>Quantity</th>
-                                                <th>Created_by</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -35,21 +34,19 @@
                                             <tr>
                                                 <th>bag</th>
                                                 <th>$40</th>
-                                                <th>4</th>
-                                                <th>tolu</th>
-                                                <th><button class="button">Add</button></th>
+                                                <th>1</th>
+                                                <th><a href="#">Add</a></th>
                                             </tr>
                                             <tr>
                                                 <th>shoe</th>
                                                 <th>$50</th>
-                                                <th>5</th>
-                                                <th>tola</th>
-                                                <th><button class="button">Add</button></th>
+                                                <th>1</th>
+                                                <th><a href="#">Add</a></th>
                                             </tr>
                                         </tbody>
                                     </table>
 
-                                    <a href="#" id="clear-cart" class="button u-full-width cart-button">Clear Cart</a>
+                                    <a href="#" id="clear-cart" class="button u-pull-left cart-button">Clear Cart</a>
                             </div>
                     </li>
 
@@ -68,14 +65,13 @@
                         <div class="hero-content" id="bg">
                         	<form action="#">
 
-                                <input type="button" class="button" value="All Products" onclick="location.href='product-page.html';">
-                                <input type="button" class="button" value="All Sales" onclick="location.href='sales-page.html';">
+                                <input type="button" class="button attendant-view-products" value="All Products">
 
                         	</form>
                  
                  
                                 <form action="#" id="search" method="post" class="form">
-                                    <input class="u-full-width" type="text" placeholder="Search for a product " id="search-course">
+                                    <input class="u-full-width" type="text" placeholder="Search for a Product... " id="search-course">
                                     <button class="button">Search</button>
                                 </form>
                         </div>
@@ -92,156 +88,59 @@
 
     </div>
 
+
+        <div class="container">
+                                    <table class=" table u-full-width container" id="first-table" >
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                                <th>View</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div class="container">
+                                    <table class=" table u-full-width container"  id="second-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                            </div>
+
     <div id="courses-list" class="container">
         <div class="row">
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/course1.jpg" class="course-image u-full-width">
-                    <div class="info-card">
-                        <h4>Computer</h4>
-                        <img src="img/stars.png">
-                        <p>  <span >$15</span></p>
-                        <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="1">Add to Cart</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course2.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>Kitchen utensils</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="2">Add to Cart</a>
-                        </div>
-                    </div>
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course3.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>Guitar</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="3">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-
-        </div> <!--.row-->
-        <div class="row">
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/course4.jpg" class="course-image u-full-width">
-                    <div class="info-card">
-                        <h4>Orchard</h4>
-                        <img src="img/stars.png">
-                        <p>  <span class="u-pull-right ">$15</span></p>
-                        <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="4">Add to Cart</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course5.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>computer</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="5">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course1.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>computers</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="6">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        <div class="row">
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/course2.jpg" class="course-image u-full-width">
-                    <div class="info-card">
-                        <h4>food</h4>
-                        <img src="img/stars.png">
-                        <p>  <span class="u-pull-right ">$15</span></p>
-                        <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="7">Add to Cart</a>
-                    </div>
-                </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course3.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>Guitar</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="8">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-            <div class="four columns">
-                    <div class="card">
-                        <img src="img/course4.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>vegetables</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="9">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-            </div>
-        </div> <!--.row-->
-        <div class="row">
-                <div class="four columns">
-                    <div class="card">
-                        <img src="img/course5.jpg" class="course-image u-full-width">
-                        <div class="info-card">
-                            <h4>Kitchen Utensils</h4>
-                            <img src="img/stars.png">
-                            <p>  <span class="u-pull-right ">$15</span></p>
-                            <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="10">Add to Cart</a>
-                        </div>
-                    </div> <!--.card-->
-                </div>
-                <div class="four columns">
+            
+                <div class="four columns u-full-width">
                         <div class="card">
-                            <img src="img/course1.jpg" class="course-image u-full-width">
-                            <div class="info-card">
-                                <h4>computer</h4>
-                                <img src="img/stars.png">
-                                <p> <span class="u-pull-right ">$15</span></p>
-                                <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="11">Add to Cart</a>
-                            </div>
-                        </div> <!--.card-->
-                </div>
-                <div class="four columns">
-                        <div class="card">
-                            <img src="img/course2.jpg" class="course-image u-full-width">
+                            <img src="img/course2.jpg" class="course-image">
                             <div class="info-card">
                                 <h4>Kitchen Utensils</h4>
                                 <img src="img/stars.png">
-                                <p>  <span class="u-pull-right ">$15</span></p>
-                                <a href="#" class="u-full-width button-primary button input add-to-cart" data-id="12">Add to Cart</a>
+                                <p>  <span class="u-pull-right product-price">$15</span></p>
+                                <a href="#" class="u-full-width button-primary button input add-to-cart">Add to Cart</a>
                             </div>
                         </div> <!--.card-->
                 </div>
             </div> <!--.row-->
     </div>
+
     
 
 
     <footer>
         <div class="footer">&copy 2018</div>
 	</footer>
-    <script src="js/app.js"></script>
+    <script src="js/attendant.js"></script>
 
 </body>
 </html>

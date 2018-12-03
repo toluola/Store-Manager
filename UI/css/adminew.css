@@ -98,8 +98,9 @@ header .user {
 	top: -8px;
 }
 .content {
-	margin-left: 500px;
-	margin-top: 100px;
+	margin-left: 400px;
+	margin-top: 50px;
+	display: none;
 }
 .user-form {
 	width: 300px;
@@ -145,8 +146,35 @@ p:before {
 	font-family: "Lato", sans-serif;
 	color: #5a5a5a;
 }
-.content > div:last-child {
-	display: none;
+
+h4 {
+	font-family: "Lato", sans-serif;
+	color: #5a5a5a;
+}
+.info-card {
+	padding: 10px 20px;
+}
+#courses-list .row {
+	margin-bottom: 20px;
+}
+
+.card {
+	text-align: center;
+	border: 1px solid #e1e1e1;
+	background: white;
+}
+.info-card p,
+.card h4 {
+	margin-bottom: 5px;
+}
+.info-card .price {
+	text-decoration: line-through;
+	font-size: 18px;
+	margin-top: 10px;
+}
+.info-card .price span {
+	font-weight: 700;
+	font-size: 22px;
 }
 
 @media screen and (max-width: 700px) {

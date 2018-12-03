@@ -16,11 +16,18 @@ header {
         text-align: left;
     }
 }
-#logo {
+.logo {
     font-size: 20px;
     font-weight: bold;
     color: #717171;
     font-family: Arial, "Helvetica", sans-serif;
+}
+.table a {
+    display: block;
+    text-decoration: none;
+}
+.table {
+    color: #717171;
 }
 
 ul {
@@ -71,13 +78,6 @@ ul {
     background-color: #efefef;
     text-align: center;
 }
-
-th,
-td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #e1e1e1;
-}
 #bg {
     background-color: #0d0c11;
     border: 1px solid #bbb;
@@ -123,39 +123,20 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-.column,
-.columns {
-    width: 100%;
-    float: left;
-    box-sizing: border-box;
-}
-.six {
-    width: 48%;
-}
-.two {
-    width: 13.3333333333%;
-}
-.four {
-    width: 30.6666666667%;
-}
-.u-full-width {
-    width: 100%;
-    box-sizing: border-box;
-}
-.u-pull-right {
-    float: right;
-}
-
 #courses-list .row {
     margin-bottom: 20px;
+}
+
+#courses-list {
+    display: none;
+    margin-left: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    #courses-list {
+        display: none;
+        margin-left: 0px;
+    }
 }
 .add-to-cart {
     margin: 10px 0;
@@ -164,38 +145,6 @@ input[type="text"] {
     text-align: center;
     border: 1px solid #e1e1e1;
     background: white;
-}
-@media (min-width: 550px) {
-    .card {
-        text-align: left;
-    }
-}
-.info-card {
-    padding: 10px 20px;
-}
-.info-card p,
-.card h4 {
-    margin-bottom: 5px;
-}
-.info-card .price {
-    text-decoration: line-through;
-    font-size: 18px;
-    margin-top: 10px;
-}
-.info-card .price span {
-    font-weight: 700;
-    font-size: 22px;
-}
-
-@media (max-width: 560px) {
-    header {
-        padding: 5px 0 0 0;
-        height: 90px;
-    }
-
-    .two {
-        width: 20%;
-    }
 }
 
 .main-bar {
@@ -221,4 +170,152 @@ input[type="text"] {
 
 #cart-content {
     width: 10px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+.four a {
+    text-decoration: none;
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#first-table {
+    display: none;
+    margin-left: 250px;
+}
+
+#second-table {
+    display: none;
+    margin-left: 250px;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+.close-form {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-form:hover,
+.close-form:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="number"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #717171;
+    font-family: Arial, "Helvetica", sans-serif;
+}
+.form-container label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #717171;
+    font-family: Arial, "Helvetica", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    #first-table {
+        margin-left: 0px;
+    }
+
+    #second-table {
+        margin-left: 0px;
+    }
+    .header {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
 }

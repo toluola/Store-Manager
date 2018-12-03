@@ -1,23 +1,25 @@
 import express from "express";
-import {
-	postProduct,
-	getProducts,
-	getProduct,
-	updateProduct,
-	deleteProduct
-} from "../controllers/product";
-import { authenticate } from "../helpers/utils";
+import productController from "../controllers/product";
+import authRoute from "../helpers/utils";
 
 const router = express.Router();
 
-router.get("/", getProducts);
+router.get("/", authRoute.verifyToken, productController.getAllProducts);
 
-router.put("/:id", authenticate, updateProduct);
+router.put(
+	"/:id",
+	authRoute.verifyTokenAdmin,
+	productController.updateSingleProduct
+);
 
-router.delete("/:id", authenticate, deleteProduct);
+router.delete(
+	"/:id",
+	authRoute.verifyTokenAdmin,
+	productController.deleteSingleProduct
+);
 
-router.post("/", authenticate, postProduct);
+router.post("/", authRoute.verifyTokenAdmin, productController.addNewProduct);
 
-router.get("/:id", getProduct);
+router.get("/:id", authRoute.verifyToken, productController.getSingleProduct);
 
 export default router;

@@ -1,76 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Admin-Page</title>
-	<link rel="stylesheet" type="text/css" href="css/admin.css">
-	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/skeleton.css">
 </head>
 <body>
-	
-	<div class="container">
-	<header>
-		<h1>Welcome Admin</h1>
-	</header>
-<div class="wrapper">		
-<section class="col">
-	
-	<div class="colum">
-		 <table id="cart-content" class="u-full-width">
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="four columns">
+                <p class="logo">My Store Manager</p>
+          
+            </div>
+            <div class="four columns u-pull-right logout-main">
+                <a href="#" class="logo logout">logout</a>
+            </div>
+           
+        </div>
+         </div>
+  
+    </header>
+
+
+    <div id="hero">
+        <div >
+            <div class="row">
+                    <div class="six columns">
+
+                        <div class="hero-content" id="bg">
+                            <form action="#">
+                                <input type="button" class="button adminViewSales" value="View Sales">
+                                <input type="button" class="button adminViewProducts" value="View Products">
+
+                            </form>
+                                <form action="#" id="search" method="post" class="addProductsForm">
+                                    <input class="u-full-width product-name" type="text" placeholder="Enter the name of the product... " id="search-course"> <input class="u-full-width product-price" type="number" placeholder="Price... " id="search-course"> <input class="u-full-width product-quantity" type="number" placeholder="Quantity... " id="search-course">
+                                    <button class="button addProducts" type="submit">Add Product</button>
+                                </form>
+                        </div>
+                    </div>
+
+                    <div class="six columns">
+
+                        <div class="hero-content" id="bg">
+                 
+                                <form action="#" id="search" method="post" class="storeAttendantForm">
+                                    <input class="u-full-width firstname" type="text" placeholder="Firstname... " id="search-course"> 
+                                    <input class="u-full-width lastname" type="text" placeholder="Lastname... " id="search-course"> 
+                                    <input class="u-full-width email" type="email" placeholder="Email " id="search-course">
+                                    <input class="u-full-width password" type="password" placeholder="Password " id="search-course">
+                                    <button class="button" type="submit">Add Store-Attendant</button>
+                                </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="main-bar">
+        <div>
+            <div class="row">
+            </div>
+        </div>
+
+    </div>
+
+        <div class="table"> 
+        <div class="container">
+                                    <table class=" table u-full-width container" id="first-table" >
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Price</th>
-                                                <th>Quantity</th>                         
-                                                <th></th>
+                                                <th>Quantity</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>bag</th>
-                                                <th>$40</th>
-                                                <th>4</th>                                            
-                                                <th><button class="button">edit</button></th>
-                                                <th><button class="button">delete</button></th>
-                                            </tr>
-                                            <tr>
-                                                <th>shoe</th>
-                                                <th>$50</th>
-                                                <th>5</th>
-                                                <th><button class="button">edit</button></th>
-                                                <th><button class="button">delete</button></th>
-                                            </tr>
                                         </tbody>
                                     </table>
-		<form>
-    		<input class="input" type="text" placeholder="Name...">
-    		<input class="input" type="text" placeholder="Price...">
-    		<input class="input" type="text" placeholder="Quantity...">
-    		<button class="button">Add</button>
-		</form>
-	</div>
-	
-	<div class="colum">
-        <input type="button" class="button" value=" View all Sales" onclick="location.href='sales-page.html';">
-		
-	</div>
-  
-  <div class="colum">
-		<h2>Create a new store attendant account</h2>
-	<form class="form">
-  		<p type="Name:"><input class="user-form"></input></p>
-  		<p type="Email:"><input class="user-form"></input></p>
-  		<button class="button">Create</button>
-</form>
-	</div>
-	
-</section>	
-	
-	<footer>
-        <div class="footer">&copy 2018</div>
-    </footer>
+                            </div>
+                            <div class="container">
+                                    <table class=" table u-full-width container"  id="second-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            </div>
+
+    <!-- Modal -->
+
+     <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    </div>
+   <div class="modal-body">
+    <span class="close">&times;</span>
+       <p></p>
+   </div>
+  </div>
 
 </div>
-	</div>
+
+<!-- Edit Form -->
+
+ <div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>EDIT THE PRODUCT</h1>
+    <span class="close-form" onclick="closeForm()">&times;</span>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="New Name of Product..." class="new-name" name="name" required>
+
+    <label for="price"><b>Price</b></label>
+    <input type="number" placeholder="New Price..." name="price" class="new-price" required>
+    <label for="quantity"><b>Quantity</b></label>
+    <input type="number" placeholder="New Quantity..." name="quantity" class="new-quantity" required>
+    <button class="button edit-form" onclick="Edit()">Edit</button>
+  </form>
+</div>
+    
+
+
+     <footer>
+        <div class="footer">&copy 2018</div>
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/logout.js"></script>
+
 </body>
 </html>

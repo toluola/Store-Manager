@@ -1,13 +1,13 @@
 import express from "express";
-import { postSales, getSales, getSale } from "../controllers/sales";
-import { authenticate } from "../helpers/utils";
+import salesController from "../controllers/sales";
+import authRoute from "../helpers/utils";
 
 const router = express.Router();
 
-router.get("/", authenticate, getSales);
+router.get("/", authRoute.verifyTokenAdmin, salesController.getAllSales);
 
-router.post("/", postSales);
+router.post("/", authRoute.verifyToken, salesController.addNewSale);
 
-router.get("/:id", authenticate, getSale);
+router.get("/:id", authRoute.verifyToken, salesController.getSingleSale);
 
 export default router;
