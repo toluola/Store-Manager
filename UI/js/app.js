@@ -24,7 +24,7 @@ const deleteProduct = tableFirst.getElementsByClassName("delete");
 
 // view all products
 viewProduct.addEventListener("click", event => {
-	fetch("http://localhost:3000/api/v1/products", {
+	fetch("https://mystoremanager10.herokuapp.com/api/v1/products", {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -61,7 +61,7 @@ viewProduct.addEventListener("click", event => {
 // Add Products
 
 addProductsForm.addEventListener("submit", event => {
-	fetch("http://localhost:3000/api/v1/products", {
+	fetch("https://mystoremanager10.herokuapp.com/api/v1/products", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -93,7 +93,7 @@ span.onclick = function() {
 // Add store attendant
 
 storeAttendantForm.addEventListener("submit", event => {
-	fetch("http://localhost:3000/api/v1/auth/signup", {
+	fetch("https://mystoremanager10.herokuapp.com/api/v1/auth/signup", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -119,7 +119,7 @@ storeAttendantForm.addEventListener("submit", event => {
 // View All Sales
 
 viewSale.addEventListener("click", event => {
-	fetch("http://localhost:3000/api/v1/sales", {
+	fetch("https://mystoremanager10.herokuapp.com/api/v1/sales", {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -151,7 +151,7 @@ function Delete() {
 	for (let i = 0; i < deleteProduct.length; i++) {
 		deleteProduct[i].addEventListener("click", event => {
 			fetch(
-				`http://localhost:3000/api/v1/products/${deleteProduct[
+				`https://mystoremanager10.herokuapp.com/api/v1/products/${deleteProduct[
 					i
 				].getAttribute("dataId")}`,
 				{
@@ -186,7 +186,7 @@ function closeForm() {
 
 function Edit() {
 	fetch(
-		`http://localhost:3000/api/v1/products/${document
+		`https://mystoremanager10.herokuapp.com/api/v1/products/${document
 			.querySelector(".edit")
 			.getAttribute("dataId")}`,
 		{

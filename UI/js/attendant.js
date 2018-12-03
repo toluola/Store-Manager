@@ -14,7 +14,7 @@ const viewProduct = tableFirst.getElementsByClassName("view");
 // fetching all products In store attendant page
 
 attendantViewProducts.addEventListener("click", event => {
-	fetch("http://localhost:3000/api/v1/products", {
+	fetch("https://mystoremanager10.herokuapp.com/api/v1/products", {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -38,9 +38,6 @@ attendantViewProducts.addEventListener("click", event => {
 			courseList.style.display = "none";
 			firstTable.innerHTML = html;
 			tableFirst.style.display = "inline-block";
-			// firstTable.style.display = "block";
-
-			// localStorage.setItem("Products", data.products);
 		})
 		.catch(error => console.log(error.message));
 
@@ -49,35 +46,11 @@ attendantViewProducts.addEventListener("click", event => {
 
 // view an individual product
 
-// function View() {
-// 	fetch(
-// 		`http://localhost:3000/api/v1/products/${document
-// 			.querySelector(".view")
-// 			.target()
-// 			.getAttribute("dataId")}`,
-// 		{
-// 			method: "GET",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 				"access-token": userToken
-// 			}
-// 		}
-// 	)
-// 		.then(res => res.json())
-// 		.then(data => {
-// 			tableFirst.style.display = "none";
-// 			courseList.style.display = "block";
-// 			productName.innerHTML = data.product.name;
-// 			productPrice.innerHTML = data.product.price;
-// 		})
-// 		.catch(error => console.log(error.message));
-// }
-
 function View() {
 	for (let i = 0; i < viewProduct.length; i++) {
 		viewProduct[i].addEventListener("click", event => {
 			fetch(
-				`http://localhost:3000/api/v1/products/${viewProduct[
+				`https://mystoremanager10.herokuapp.com/api/v1/products/${viewProduct[
 					i
 				].getAttribute("dataId")}`,
 				{
